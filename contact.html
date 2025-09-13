@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact & Book | Greekend Transfers</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="nav-wrap">
+      <nav class="container nav">
+        <a class="brand" href="index.html"><img src="images/new logo.png" alt="Greekend Transfers" class="logo-img"> <span>Greekend Transfers <small>Greece</small></span></a>
+        <button class="menu-btn btn-outline" data-menu>Menu</button>
+        <div class="nav-links" data-links>
+          <a href="index.html">Home</a>
+          <a href="private-transfers.html">Private Transfers</a>
+          <a href="motorhome.html">Motorhome Adventures</a>
+          <a href="custom-tours.html">Custom Tours</a>
+          <a class="active" href="about.html">About</a>
+        </div>
+      </nav>
+    </div>
+
+    <header class="hero" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/Island.jpg') no-repeat center center/cover;">
+      <div class="hero-media">
+        <div class="overlay"></div>
+      </div>
+      <div class="content container">
+        <div>
+          <h1>Contact & Book</h1>
+          <p>Share your dates and preferences. We’ll reply quickly with availability and pricing.</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="container contact-wrap">
+      <form id="booking-form" class="card">
+        <div class="card-body">
+          <h2>Send a Request</h2>
+          <div id="form-alert" class="alert" style="display: none; margin-bottom: 1rem; padding: 0.75rem; border-radius: 6px;"></div>
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+          <div class="field">
+            <label for="phone">Phone Number</label>
+            <input id="phone" name="phone" type="tel" required />
+          </div>
+          <div class="field">
+            <label for="service">Service</label>
+            <select id="service" name="service" required>
+              <option value="">Select a service</option>
+              <option value="Private Transfer">Private Transfer</option>
+              <option value="Custom Tour">Custom Tour</option>
+              <option value="Motorhome">Motorhome</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="dates">Travel Dates</label>
+            <input id="dates" name="dates" type="text" placeholder="e.g. 12–18 Aug" required />
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us about your trip (e.g., number of people, pickup/drop-off locations, special requirements)" required></textarea>
+          </div>
+          <button id="send-btn" class="btn btn-primary" type="submit">
+            <span id="button-text">Send Request</span>
+            <span id="button-spinner" style="display: none;">Sending...</span>
+          </button>
+        </div>
+      </form>
+
+      <div>
+        <div class="card" style="padding:1.2rem;">
+          <h3>Details</h3>
+          <p class="muted">Phone: <a href="tel:+306972500117">+30 6972500117</a>, <a href="tel:+306940514882">+30 6940514882</a></p>
+          <p class="muted">Email: <a href="mailto:greatkapiris@gmail.com">greatkapiris@gmail.com</a></p>
+          <p class="muted">Location: Athens, Greece</p>
+          <p class="muted">Instagram: <a href="https://instagram.com/greekendtransfers" target="_blank" rel="noopener">@greekendtransfers</a></p>
+        </div>
+        <div class="map" style="margin-top:1rem;">
+          <iframe title="Map" src="https://www.google.com/maps?q=Athens%2C%20Greece&output=embed" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="copyright">© <span data-year></span> Greekend Transfers</div>
+        <div class="credit">Created by <strong>Aggelos Kamberis</strong> — <a href="mailto:aggeloskamberis@gmail.com">aggeloskamberis@gmail.com</a></div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+      // Initialize EmailJS with your public key
+      (function() {
+        emailjs.init({
+          publicKey: 'HvMOHpXJqbOoyAYpK',
+          blockHeadless: true,
+          blockList: {
+            // Block the request if it contains a gmail or yahoo email
+            // This is just an example - adjust as needed
+            // 'gmail.com': 'gmail',
+            // 'yahoo.com': 'yahoo'
+          },
+          limitRate: {
+            // Set the limit rate for the application
+            id: 'app',
+            // 1000 requests per 60 seconds
+            throttle: 1000
+          }
+        });
+      })();
+    </script>
+    <script src="script.js"></script>
+  </body>
+  </html>
+
+

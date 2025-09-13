@@ -1,0 +1,227 @@
+/*
+  Spiros Website – Global Styles
+  Modern, elegant design with warm beige background and refined typography
+*/
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+  --beige-50: #f7f1e8;
+  --beige-100: #f3e9dd;
+  --beige-200: #e7dccf;
+  --ink: #2a2420;
+  --ink-soft: #4a433e;
+  --accent: #b87333; /* copper */
+  --accent-dark: #8c5526;
+  --card-bg: #ffffff;
+  --shadow: 0 10px 30px rgba(0,0,0,.08);
+  --radius: 14px;
+  --radius-sm: 10px;
+  --maxw: 1200px;
+}
+
+/* Global reset */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  color: var(--ink);
+  background: linear-gradient(180deg, var(--beige-50), var(--beige-100));
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  color: var(--ink);
+  letter-spacing: .2px;
+  margin: 0 0 .6rem 0;
+}
+
+p { margin: 0 0 1rem 0; }
+
+.container {
+  width: min(94%, var(--maxw));
+  margin: 0 auto;
+}
+
+/* Navigation */
+.nav-wrap {
+  position: sticky;
+  top: 0; z-index: 50;
+  /* Solid header background to match logo background */
+  backdrop-filter: none;
+  background: #faf2e1; /* rgba(250,242,225,1) */
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .9rem 0;
+}
+.brand {
+  display: inline-flex; align-items: baseline; gap: .5rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700; font-size: 1.25rem;
+}
+.brand small { font: 500 .8rem/1 'Inter', sans-serif; color: var(--ink-soft); }
+
+/* Logo in sticky header */
+.logo-img {
+  height: 60px;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 4px;
+}
+
+@media (max-width: 720px) {
+  .logo-img { height: 28px; }
+}
+
+.nav a { text-decoration: none; color: var(--ink); font-weight: 600; }
+.nav-links { display: flex; gap: 1.1rem; align-items: center; }
+.nav-links a { opacity: .85; }
+.nav-links a:hover, .nav-links a.active { color: var(--accent-dark); opacity: 1; }
+
+.menu-btn { display:none; background:none; border:0; font-size:1.2rem; }
+
+/* Buttons */
+.btn { 
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  padding: .75rem 1.1rem; border-radius: 999px; border: 1px solid transparent;
+  font-weight: 600; text-decoration: none; cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease, background .2s ease;
+}
+.btn-primary { background: var(--accent); color: #fff; box-shadow: var(--shadow); }
+.btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
+.btn-outline { border-color: var(--accent); color: var(--accent-dark); }
+.btn-outline:hover { background: var(--accent); color: #fff; }
+
+/* Hero */
+.hero {
+  position: relative; overflow: hidden; border-radius: 0 0 var(--radius) var(--radius);
+  background: #faf2e1; /* rgba(250,242,225,1) */
+}
+.hero-media { position: relative; height: 64vh; min-height: 420px; }
+.hero video, .hero .hero-img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  filter: contrast(1.02) saturate(1.05);
+}
+.hero .overlay { position:absolute; inset:0; background: linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.45)); }
+.hero .content { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; color: #fff; padding: 0 1rem; }
+.hero h1 { font-size: clamp(2rem, 4vw, 3.4rem); color: #fff; }
+.hero p { font-size: clamp(1rem, 2vw, 1.2rem); opacity: .95; max-width: 760px; }
+
+/* Sections */
+section { padding: 72px 0; }
+.section-title { text-align: center; margin-bottom: 1.6rem; }
+.section-lead { text-align: center; color: var(--ink-soft); max-width: 780px; margin: 0 auto 2rem; }
+
+/* Cards and grids */
+.grid { display: grid; gap: 1.2rem; }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* Utility: center a row group with a narrower max width */
+.centered-row { width: min(94%, 980px); margin: 0 auto; }
+
+/* Centered two-column grid for pages with exactly two cards */
+.grid-center-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 360px));
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.card .card-media { height: 190px; background: var(--beige-200); }
+.card .card-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card .card-body { padding: 1rem 1.1rem; }
+.muted { color: var(--ink-soft); font-size: .95rem; }
+
+/* Features */
+.features { gap: 1.2rem; }
+.feature {
+  padding: 1.2rem; background: #fff; border: 1px solid rgba(0,0,0,.06);
+  border-radius: var(--radius-sm); box-shadow: var(--shadow);
+  display: grid; grid-template-columns: 44px 1fr; gap: .9rem; align-items: start;
+}
+.feature svg { width: 36px; height: 36px; color: var(--accent-dark); }
+
+/* Reviews */
+.review { padding: 1.2rem 1.3rem; }
+.review .stars { color: #e0a10a; font-size: 1.1rem; letter-spacing: .5px; }
+
+/* Gallery */
+.gallery { grid-template-columns: repeat(12, 1fr); gap: .75rem; }
+.gallery img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; box-shadow: var(--shadow); }
+.span-6 { grid-column: span 6; }
+.span-4 { grid-column: span 4; }
+.span-8 { grid-column: span 8; }
+/* Full-width span */
+.span-12 { grid-column: span 12; }
+
+/* Pricing */
+.price { font-weight: 800; color: var(--accent-dark); font-size: 1.2rem; }
+
+/* Footer */
+footer { padding: 56px 0 40px; border-top: 1px solid rgba(0,0,0,.06); background: rgba(255,255,255,.6); }
+footer .cols { display: grid; gap: 1.4rem; grid-template-columns: 2fr 1fr 1fr; }
+footer a { color: var(--ink); text-decoration: none; }
+footer a:hover { color: var(--accent-dark); }
+.copyright { margin-top: 18px; color: var(--ink-soft); font-size: .9rem; }
+footer .credit { margin-top: 6px; font-size: .9rem; }
+
+/* Contact */
+.contact-wrap { display: grid; gap: 1.4rem; grid-template-columns: 1.2fr 1fr; align-items: start; }
+form .field { display: grid; gap: .45rem; margin-bottom: .9rem; }
+input, textarea, select {
+  width: 100%; padding: .8rem .9rem; border-radius: 12px; border: 1px solid rgba(0,0,0,.12);
+  background: #fff; outline: none; transition: border .15s ease, box-shadow .15s ease;
+}
+input:focus, textarea:focus, select:focus { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(184,115,51,.12); }
+textarea { min-height: 140px; resize: vertical; }
+.map { height: 380px; border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); }
+
+/* Utility */
+.pill { display: inline-flex; padding: .45rem .7rem; border-radius: 999px; background: var(--beige-200); color: var(--ink-soft); font-weight: 600; font-size: .85rem; }
+.spaced { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+
+/* Responsive */
+@media (max-width: 960px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  footer .cols { grid-template-columns: 1fr 1fr; }
+  .contact-wrap { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
+  .nav { padding: .7rem 0; }
+  .menu-btn { display: inline-flex; }
+  .nav-links { 
+    position: absolute; top: 60px; right: 3%; left: 3%;
+    background: rgba(255,255,255,.9); border: 1px solid rgba(0,0,0,.08); border-radius: 12px;
+    padding: .8rem; display: none; flex-direction: column; gap: .6rem; box-shadow: var(--shadow);
+  }
+  .nav-links.show { display: flex; }
+  .grid-3, .grid-4, .grid-2 { grid-template-columns: 1fr; }
+  .grid-center-2 { grid-template-columns: 1fr; }
+  .centered-row { width: 94%; }
+  .gallery { grid-template-columns: repeat(6, 1fr); }
+  .span-8 { grid-column: span 6; }
+  .span-6 { grid-column: span 6; }
+  .span-4 { grid-column: span 6; }
+  .span-12 { grid-column: span 6; }
+}
+
+
