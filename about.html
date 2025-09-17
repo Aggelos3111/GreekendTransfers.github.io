@@ -11,13 +11,16 @@
     <div class="nav-wrap">
       <nav class="container nav">
         <a class="brand" href="index.html"><img src="images/new logo.png" alt="Greekend Transfers" class="logo-img"> <span>Greekend Transfers <small>Greece</small></span></a>
-        <button class="menu-btn btn-outline" data-menu>Menu</button>
-        <div class="nav-links" data-links>
+        <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-navigation">
+          <span class="hamburger"></span>
+        </button>
+        <div class="nav-links" id="main-navigation" data-visible="false">
           <a href="index.html">Home</a>
           <a href="private-transfers.html">Private Transfers</a>
-          <a href="motorhome.html">Motorhome Adventures</a>
+          <a href="motorhome.html">Motorhome</a>
           <a href="custom-tours.html">Custom Tours</a>
-          <a href="contact.html">Booking</a>
+          <a href="about.html" class="active">About</a>
+          <a href="contact.html" class="btn btn-primary" style="margin-top: 0.5rem;">Book Now</a>
         </div>
       </nav>
     </div>
