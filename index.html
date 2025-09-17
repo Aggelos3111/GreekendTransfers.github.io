@@ -13,12 +13,16 @@
     <div class="nav-wrap">
       <nav class="container nav">
         <a class="brand" href="index.html"><img src="images/new logo.png" alt="Greekend Transfers" class="logo-img"> <span>Greekend Transfers <small>Greece</small></span></a>
-        <button class="menu-btn btn-outline" data-menu>Menu</button>
-        <div class="nav-links" data-links>
-          <a class="active" href="index.html">Home</a>
+        <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-navigation">
+          <span class="hamburger"></span>
+        </button>
+        <div class="nav-links" id="main-navigation" data-visible="false">
+          <a href="index.html" class="active">Home</a>
           <a href="private-transfers.html">Private Transfers</a>
+          <a href="motorhome.html">Motorhome</a>
           <a href="custom-tours.html">Custom Tours</a>
-          <a href="contact.html">Booking</a>
+          <a href="about.html">About</a>
+          <a href="contact.html" class="btn btn-primary" style="margin-top: 0.5rem;">Book Now</a>
         </div>
       </nav>
     </div>
@@ -49,21 +53,31 @@
         <h2>Comfort, Style, Freedom</h2>
         <p class="section-lead">From airport pickups to week‑long road trips, choose the experience that fits you best.</p>
       </div>
-      <div class="grid grid-2" style="max-width: 1000px; margin: 0 auto;">
-        <a class="card" href="private-transfers.html">
+      <div class="grid grid-3" style="max-width: 1200px; margin: 0 auto;">
+        <div class="card">
           <div class="card-media"><img src="images/Toyota Proace.png" alt="Private transfer mini van" /></div>
           <div class="card-body">
             <h3>Private Transfers</h3>
             <p class="muted">Comfortable rides in our Toyota mini van or Peugeot 508. Request a quote for your journey.</p>
+            <a href="private-transfers.html" class="btn btn-outline" style="margin-top: 1rem;">Learn More</a>
           </div>
-        </a>
-        <a class="card" href="custom-tours.html">
+        </div>
+        <div class="card">
           <div class="card-media"><img src="images/Peugeot 508.png" alt="Peugeot 508 for custom tours" /></div>
           <div class="card-body">
             <h3>Custom Tours</h3>
             <p class="muted">Explore Greece in comfort with our Toyota mini van or Peugeot 508. Personalized itineraries for every traveler.</p>
+            <a href="custom-tours.html" class="btn btn-outline" style="margin-top: 1rem;">Plan Your Tour</a>
           </div>
-        </a>
+        </div>
+        <div class="card">
+          <div class="card-media"><img src="images/Family.png" alt="Motorhome adventure" /></div>
+          <div class="card-body">
+            <h3>Motorhome Rental</h3>
+            <p class="muted">Experience the freedom of the open road with our fully-equipped motorhomes. Perfect for families and adventurers.</p>
+            <a href="motorhome.html" class="btn btn-outline" style="margin-top: 1rem;">Explore Options</a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -155,6 +169,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="menu.js"></script>
   </body>
   </html>
 
