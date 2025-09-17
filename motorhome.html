@@ -11,13 +11,16 @@
     <div class="nav-wrap">
       <nav class="container nav">
         <a class="brand" href="index.html"><img src="images/new logo.png" alt="Greekend Transfers" class="logo-img"> <span>Greekend Transfers <small>Greece</small></span></a>
-        <button class="menu-btn btn-outline" data-menu>Menu</button>
-        <div class="nav-links" data-links>
+        <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-navigation">
+          <span class="hamburger"></span>
+        </button>
+        <div class="nav-links" id="main-navigation" data-visible="false">
           <a href="index.html">Home</a>
           <a href="private-transfers.html">Private Transfers</a>
-          <a class="active" href="motorhome.html">Motorhome Adventures</a>
+          <a href="motorhome.html" class="active">Motorhome</a>
           <a href="custom-tours.html">Custom Tours</a>
-          <a href="contact.html">Booking</a>
+          <a href="about.html">About</a>
+          <a href="contact.html" class="btn btn-primary" style="margin-top: 0.5rem;">Book Now</a>
         </div>
       </nav>
     </div>
@@ -80,26 +83,19 @@
     </section>
 
     <section class="container">
-      <div class="section-title"><div class="pill">Pricing</div><h2>Rates & Seasons</h2></div>
+      <div class="section-title"><div class="pill">Rental Information</div><h2>Plan Your Adventure</h2></div>
       <div class="card" style="max-width: 800px; margin: 0 auto;">
-        <div class="card-body">
-          <h3>Motorhome Rental Rates</h3>
+        <div class="card-body" style="text-align: center;">
+          <h3>Motorhome Rental</h3>
+          <p class="muted">Get a personalized quote for your dream road trip. Our rates vary by season and rental duration.</p>
           <div style="margin: 1.5rem 0;">
-            <div style="display: flex; justify-content: space-between; padding: 1rem; background: #f8f9fa; border-radius: 6px; margin-bottom: 0.5rem;">
-              <span><strong>High Season (July - August)</strong></span>
-              <span><strong>220€</strong> per day</span>
+            <div style="padding: 1rem; background: #f8f9fa; border-radius: 6px; margin-bottom: 1rem;">
+              <h4>What's Included</h4>
+              <p class="muted" style="margin: 0.5rem 0;">✓ Unlimited kilometers<br>✓ Full insurance coverage<br>✓ 24/7 support</p>
             </div>
-            <div style="display: flex; justify-content: space-between; padding: 1rem; background: #f8f9fa; border-radius: 6px; margin-bottom: 0.5rem;">
-              <span><strong>Mid Season (May - June, September - October)</strong></span>
-              <span><strong>200€</strong> per day</span>
-            </div>
-            <div style="display: flex; justify-content: space-between; padding: 1rem; background: #f8f9fa; border-radius: 6px;">
-              <span><strong>Low Season (November - April)</strong></span>
-              <span><strong>180€</strong> per day</span>
-            </div>
+            <p class="muted">Minimum rental period: 3 days</p>
           </div>
-          <p class="muted">Minimum rental period: 3 days. Includes unlimited kilometers, full insurance, and 24/7 support.</p>
-          <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem;">Book Now</a>
+          <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem; width: 100%; max-width: 200px;">Get a Quote</a>
         </div>
       </div>
     </section>
