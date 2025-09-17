@@ -11,13 +11,16 @@
     <div class="nav-wrap">
       <nav class="container nav">
         <a class="brand" href="index.html"><img src="images/new logo.png" alt="Greekend Transfers" class="logo-img"> <span>Greekend Transfers <small>Greece</small></span></a>
-        <button class="menu-btn btn-outline" data-menu>Menu</button>
-        <div class="nav-links" data-links>
+        <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-navigation">
+          <span class="hamburger"></span>
+        </button>
+        <div class="nav-links" id="main-navigation" data-visible="false">
           <a href="index.html">Home</a>
-          <a class="active" href="private-transfers.html">Private Transfers</a>
-          <a href="motorhome.html">Motorhome Adventures</a>
+          <a href="private-transfers.html" class="active">Private Transfers</a>
+          <a href="motorhome.html">Motorhome</a>
           <a href="custom-tours.html">Custom Tours</a>
           <a href="about.html">About</a>
+          <a href="contact.html" class="btn btn-primary" style="margin-top: 0.5rem;">Book Now</a>
         </div>
       </nav>
     </div>
@@ -56,11 +59,26 @@
     </section>
 
     <section class="container">
-      <div class="section-title"><div class="pill">From Prices</div><h2>Popular Routes</h2></div>
+      <div class="section-title"><div class="pill">Our Services</div><h2>Popular Routes</h2></div>
       <div class="grid grid-3">
-        <div class="card review"><h3>Airport → Athens Center</h3><p class="price">from €45</p><p class="muted">Meet & greet at arrivals, 24/7</p></div>
-        <div class="card review"><h3>Airport → Piraeus Port</h3><p class="price">from €60</p><p class="muted">Ferry connections made easy</p></div>
-        <div class="card review"><h3>Day Hire (8h)</h3><p class="price">from €280</p><p class="muted">Driver at disposal, custom itinerary</p></div>
+        <div class="card review">
+          <h3>Airport → Athens Center</h3>
+          <p class="price">Get a Quote</p>
+          <p class="muted">Meet & greet at arrivals, 24/7</p>
+          <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem;">Book Now</a>
+        </div>
+        <div class="card review">
+          <h3>Airport → Piraeus Port</h3>
+          <p class="price">Get a Quote</p>
+          <p class="muted">Ferry connections made easy</p>
+          <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem;">Book Now</a>
+        </div>
+        <div class="card review">
+          <h3>Day Hire (8h)</h3>
+          <p class="price">Get a Quote</p>
+          <p class="muted">Driver at disposal, custom itinerary</p>
+          <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem;">Book Now</a>
+        </div>
       </div>
     </section>
 
